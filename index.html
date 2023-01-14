@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to my Etch-a-sketch project!</h1>
+    </header>
+    <div class="content">
+        <div class="drawing-board">
+        </div>
+        <div class="buttons">
+            <button>Black</button>
+            <button>White</button>
+            <button>Random</button>
+            <button>Reset</button>
+        </div>
+        <input type="text" placeholder="Size of the board" value="16" onchange="changeSize(this.value);">
+        <button class="set-size-button">Set size</button>
+    </div>
+</body>
+<script src="./script.js"></script>
+
+</html>
