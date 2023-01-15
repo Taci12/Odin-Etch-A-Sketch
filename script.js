@@ -6,7 +6,7 @@ function createSquares(dimension) {
     totalSquares = dimension * dimension;
     let squares = document.querySelectorAll('.squares');
     squares.forEach((square) => {
-        square.classList.remove('.squares');
+        square.classList.remove();
     });
     for (let i = 0; i < totalSquares; i++) {
         let square = document.createElement('div');
@@ -37,7 +37,7 @@ function changeColor(newColor) {
 }
 
 function resetSquares() {
-    let squares = document.querySelectorAll('.squares');
+    let squares = document.querySelectorAll('.square');
     squares.forEach((element) => {
         element.style.backgroundColor = 'white';
     });
