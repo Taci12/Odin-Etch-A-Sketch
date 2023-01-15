@@ -17,12 +17,12 @@
         <div class="drawing-board">
         </div>
         <div class="buttons">
-            <button id="black-button">Black</button>
-            <button id="white-button">White</button>
-            <button id="random-button">Random</button>
-            <button id="reset-button">Reset</button>
+            <button id="black-button" onclick="changeColor('black')">Black</button>
+            <button id="white-button" onclick="changeColor('white')">White</button>
+            <button id="random-button" onclick="changeColor('random')">Random</button>
+            <button id="reset-button" onclick="resetSquares()">Reset</button>
         </div>
-        <button class="set-size-button">Set size</button>
+        <button class="set-size-button" onclick="changeSize()">Set size</button>
     </div>
 </body>
 <script src="./script.js"></script>

@@ -1,16 +1,23 @@
-let color = 'white';
+let color = 'black';
 
 function createSquares(dimension) {
     let board = document.querySelector('.drawing-board');
     board.style.gridTemplate = `repeat(${dimension}, 1fr) / repeat(${dimension}, 1fr)`;
     totalSquares = dimension * dimension;
+    let squares = document.querySelectorAll('.squares');
+    squares.forEach((square) => {
+        square.classList.remove('.squares');
+    });
     for (let i = 0; i < totalSquares; i++) {
         let square = document.createElement('div');
-        square.style.backgroundColor = `${color}`;
+        square.classList.add('square');
+        square.style.backgroundColor = 'white';
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = color;
+        });
         board.appendChild(square);
     };
 };
-
 
 function changeSize() {
     let size = window.prompt('Input size: ');
@@ -21,5 +28,18 @@ function changeSize() {
     createSquares(size);
 };
 
-let sizeButton = document.querySelector('.set-size-button');
-sizeButton.addEventListener('click', changeSize)
+function changeColor(newColor) {
+    if (!(newColor == 'random')) {
+        color = newColor;
+    } else {
+        color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    }
+}
+
+function resetSquares() {
+    let squares = document.querySelectorAll('.squares');
+    squares.forEach((element) => {
+        element.style.backgroundColor = 'white';
+    });
+};
+
