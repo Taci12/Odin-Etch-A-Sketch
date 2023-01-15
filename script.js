@@ -1,4 +1,4 @@
-let color = 'black';
+let color = 'white';
 
 function createSquares(dimension) {
     let board = document.querySelector('.drawing-board');
@@ -11,12 +11,15 @@ function createSquares(dimension) {
     };
 };
 
-let size = document.querySelector('.input').value;
-console.log(value);
 
-function changeSize(size) {
+function changeSize() {
+    let size = window.prompt('Input size: ');
+    while ((size > 100) || (size < 10)) {
+        window.alert('The size must be between 10 and 100!');
+        size = window.prompt('Input size: ');
+    }
     createSquares(size);
 };
 
-let setSizeButton = document.querySelector('.set-size-button');
-setSizeButton.addEventListener('click', changeSize(size));
+let sizeButton = document.querySelector('.set-size-button');
+sizeButton.addEventListener('click', changeSize)
